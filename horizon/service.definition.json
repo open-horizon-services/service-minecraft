@@ -1,0 +1,51 @@
+{
+    "org": "$HZN_ORG_ID",
+    "label": "$SERVICE_NAME for $ARCH",
+    "description": "Open Horizon service for the Java-based vanilla Minecraft server",
+    "public": true,
+    "documentation": "https://github.com/itzg/docker-minecraft-server/blob/master/README.md",
+    "url": "$SERVICE_NAME",
+    "version": "$SERVICE_VERSION",
+    "arch": "$ARCH",
+    "sharable": "multiple",
+    "requiredServices": [],
+    "userInput": [
+        {
+            "name": "MEMORY",
+            "label": "How much memory to use for the server in GB, ex: 2G",
+            "type": "string",
+            "defaultValue": "2G"
+        },
+        {
+            "name": "EULA",
+            "label": "Automatically accept the EULA, boolean string",
+            "type": "string",
+            "defaultValue": "true"
+        },
+        {
+            "name": "TYPE",
+            "label": "What kind of Minecraft server to run, ex: SPIGOT, CANYON, FORGE",
+            "type": "string",
+            "defaultValue": "SPIGOT"
+        },
+        {
+            "name": "VERSION",
+            "label": "What version to run, ex: 1.17",
+            "type": "string",
+            "defaultValue": "1.19"
+        }
+    ],
+    "deployment": {
+        "services": {
+            "$SERVICE_NAME": {
+                "image": "${DOCKER_IMAGE_BASE}:$DOCKER_IMAGE_VERSION",
+                "privileged": false,
+                "ports": [
+                    {"HostIP":"0.0.0.0","HostPort":"${MINECRAFT_SERVER_PORT}:25565"},
+                    {"HostIP":"0.0.0.0","HostPort":"${MINECRAFT_RCON_PORT}:25575"}
+                ],
+                "binds": [ "${MINECRAFT_VOLUME_NAME}:/data:rw" ]
+            }
+        }
+    }
+}
