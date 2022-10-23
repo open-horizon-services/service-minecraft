@@ -1,4 +1,7 @@
 # service-minecraft
+![](https://img.shields.io/badge/architecture-arm64%2C%20x86%20-green)
+![](https://img.shields.io/github/license/open-horizon-services/service-minecraft)
+![](https://img.shields.io/github/contributors/open-horizon-services/service-minecraft)
 
 This is a pre-existing, containerized version of a Minecraft server designed to be deployed and managed by Open Horizon.
 
