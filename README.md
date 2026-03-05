@@ -2,6 +2,7 @@
 ![Architecture](https://img.shields.io/badge/architecture-arm64%2C%20x86%20-green)
 ![License](https://img.shields.io/github/license/open-horizon-services/service-minecraft)
 ![Contributors](https://img.shields.io/github/contributors/open-horizon-services/service-minecraft)
+![Documentation Quality](https://github.com/open-horizon-services/service-minecraft/actions/workflows/documentation-quality.yml/badge.svg)
 
 This is a pre-existing, containerized version of a Minecraft server designed to be deployed and managed by Open Horizon.
 
@@ -69,7 +70,7 @@ Check that the agent is in an unconfigured state, and that it can communicate wi
 
 Note: testing the Minecraft server currently requires you to own a copy of the Minecraft Java Edition client.
 
-To manually run a minecraft server locally as a test, enter `make`.  Currently to test if the server is working, you will have to manually open your Minecraft client and attempt to connect.  It will likely take a few minutes for the server to start up and prepare the world.  Running `make attach` will connect you to a prompt running inside the container, and you can end that session by entering `stop`.  When you are done, run `make stop` in the terminal to end the test.
+To manually run a Minecraft server locally as a test, enter `make`.  Currently to test if the server is working, you will have to manually open your Minecraft client and attempt to connect.  It will likely take a few minutes for the server to start up and prepare the world.  Running `make attach` will connect you to a prompt running inside the container, and you can end that session by entering `stop`.  When you are done, run `make stop` in the terminal to end the test.
 
 To create [the service definition](https://github.com/open-horizon/examples/blob/master/edge/services/helloworld/CreateService.md#build-publish-your-hw), publish it to the hub, and then form an agreement to download and run a Minecraft server, enter `make publish`.  When installation is complete and an agreement has been formed, exit the watch command with Control-C.
 
