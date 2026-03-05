@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "language": "en-US",
+  "words": [
+    "anax",
+    "amd64",
+    "arm64",
+    "containerized",
+    "distclean",
+    "helloworld",
+    "itzg",
+    "jq",
+    "macOS",
+    "Makefile",
+    "minecraft",
+    "RCON",
+    "Spigot",
+    "systemctl",
+    "unconfigured",
+    "userinput"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    ".git",
+    "*.log"
+  ]
+}

@@ -159,6 +159,21 @@ For successful deployment, ensure:
 4. **Check logs** if deployment fails: `make log` provides detailed diagnostics
 5. **Graceful shutdown**: Always use `rcon-cli stop` before removing containers
 6. **Version management**: Update `SERVICE_VERSION` when making changes to service definition
+7. **README.md quality**: Always lint and spellcheck the README.md file before committing and pushing changes to ensure documentation quality and consistency
+
+### Automated Documentation Quality Checks
+
+The repository includes automated GitHub Actions workflows that run on every commit affecting README.md:
+
+- **Markdown Linting**: Uses `markdownlint-cli` with configuration in `.markdownlint.json`
+- **Spellchecking**: Uses `cspell` with custom dictionary in `.cspell.json`
+- **Workflow File**: `.github/workflows/documentation-quality.yml`
+
+The workflow status is displayed via a badge at the top of README.md. Both checks must pass before merging changes.
+
+**Configuration Files:**
+- `.markdownlint.json`: Markdown linting rules (allows line length up to 120 chars, permits HTML img tags)
+- `.cspell.json`: Custom dictionary for technical terms (anax, containerized, Spigot, etc.)
 
 ## Troubleshooting
 
